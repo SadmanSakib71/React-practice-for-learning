@@ -1,10 +1,9 @@
-import Form from "./component/Form";
+import Travel from "./component/Travel";
 
 function App() {
   return (
     <div className="">
-      {/* <Pointer></Pointer> */}
-      <Form />
+      <Travel />
     </div>
   );
 }
