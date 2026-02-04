@@ -1,43 +1,19 @@
 import { useState } from "react";
-
-const initialItems = [
-  { title: "Burger", id: 1 },
-  { title: "Sandwich", id: 2 },
-  { title: "Rice", id: 3 },
-];
+import { initialTravelPlan } from "../data/places";
+import PlaceTree from "./PlaceTree";
 
 const Travel = () => {
-  const [items, setItems] = useState(initialItems);
-  const [selectedId, setSelectedId] = useState(0);
+  const [places, setPlaces] = useState(initialTravelPlan);
+  const plants = places.childPlaces;
 
-  const selectedItem = items.find((item) => item.id === selectedId);
-
-  const handleChange = (id, e) => {
-    setItems(
-      items.map((item) => {
-        if (item.id === id) {
-          return {
-            ...item,
-            title: e.target.value,
-          };
-        } else {
-          return item;
-        }
-      }),
-    );
-  };
   return (
     <div>
-      {items.map((item) => (
-        <li key={item.id}>
-          <input
-            onChange={(e) => handleChange(item.id, e)}
-            value={item.title}
-          />
-          <button onClick={() => setSelectedId(item.id)}>Choose</button>
-        </li>
-      ))}
-      <p>YOu picked: {selectedItem?.title}</p>
+      <h1>Place to visit</h1>
+      <ol className="list-decimal pl-6">
+        {plants.map((place) => (
+          <PlaceTree key={place.id} place={place} />
+        ))}
+      </ol>
     </div>
   );
 };
