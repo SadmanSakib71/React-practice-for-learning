@@ -1,14 +1,16 @@
-const PlaceTree = ({ place }) => {
-  const childPlaces = place.childPlaces;
+const PlaceTree = ({ id, normPlaces }) => {
+  const place = normPlaces[id];
+
+  const childPlacesIds = place.childPlaceIds;
 
   return (
-    <li>
-      <p>{place.title}</p>
-
-      {childPlaces.length > 0 && (
-        <ol className="list-decimal pl-6">
-          {childPlaces.map((child) => (
-            <PlaceTree key={child.id} place={child} />
+    <li className="mt-2">
+      {place.title}{" "}
+      <button className="border ml-2 px-1 cursor-pointer">Complete</button>
+      {childPlacesIds.length > 0 && (
+        <ol className="list-decimal pl-6 mt-2">
+          {childPlacesIds.map((childId) => (
+            <PlaceTree key={childId} id={childId} normPlaces={normPlaces} />
           ))}
         </ol>
       )}
