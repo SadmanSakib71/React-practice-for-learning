@@ -1,33 +1,28 @@
-import { useState } from "react";
-import Accordion from "./component/Accordion";
+import "./App.css";
+import Heading from "./component/Heading";
+import Section from "./component/Section";
 
-function App() {
-  const [activeIndex, setActiveIndex] = useState(0);
-
+const App = () => {
   return (
-    <div className="">
-      <Accordion
-        isActive={activeIndex === 0}
-        onClick={() => setActiveIndex(0)}
-        title="sakib"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-        praesentium. Explicabo consequuntur quae iste, voluptates fugiat quos
-        distinctio optio vel molestiae obcaecati esse dolorem enim voluptas
-        alias quam aliquam magni.
-      </Accordion>
-      <Accordion
-        isActive={activeIndex === 1}
-        onClick={() => setActiveIndex(1)}
-        title="Any"
-      >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti,
-        praesentium. Explicabo consequuntur quae iste, voluptates fugiat quos
-        distinctio optio vel molestiae obcaecati esse dolorem enim voluptas
-        alias quam aliquam magni.
-      </Accordion>
-    </div>
+    <Section level={1}>
+      <Heading>Title</Heading>
+      <Section level={2}>
+        <Heading>Heading</Heading>
+        <Heading>Heading</Heading>
+        <Heading>Heading</Heading>
+        <Section level={3}>
+          <Heading>Sub-heading</Heading>
+          <Heading>Sub-heading</Heading>
+          <Heading>Sub-heading</Heading>
+          <Section level={4}>
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+            <Heading>Sub-sub-heading</Heading>
+          </Section>
+        </Section>
+      </Section>
+    </Section>
   );
-}
+};
 
 export default App;
