@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import { flushSync } from "react-dom";
 
 const TodoList = () => {
   const listRef = useRef(null);
@@ -8,7 +9,10 @@ const TodoList = () => {
   function handleAdd() {
     const newTodo = { id: nextId++, text: text };
     setText("");
-    setTodos([...todos, newTodo]);
+
+    flushSync(() => {
+      setTodos([...todos, newTodo]);
+    });
 
     listRef.current.lastChild.scrollIntoView({
       behavior: "smooth",
