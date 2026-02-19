@@ -5,7 +5,7 @@ import Section from "./component/Section";
 const App = () => {
   return (
     <Section level={1}>
-      <Heading>Title</Heading>
+      <Heading>Heading</Heading>
       <Section level={2}>
         <Heading>Heading</Heading>
         <Heading>Heading</Heading>
