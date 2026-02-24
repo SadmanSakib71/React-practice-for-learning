@@ -1,10 +1,10 @@
 import "./App.css";
-import TodoList from "./component/TodoList";
+import MyComponent from "./component/MyComponent";
 
 const App = () => {
   return (
     <>
-      <TodoList />
+      <MyComponent isPlaying={isPlaying} />
     </>
   );
 };
