@@ -8,15 +8,12 @@ export default function Form() {
     <>
       <label>
         First name:
-        <input
-          value={firstNameProps.value}
-          onChange={firstNameProps.onChange}
-        />
+        <input {...firstNameProps} />
       </label>
       <br />
       <label>
         Last name:
-        <input value={lastNameProps.value} onChange={lastNameProps.onChange} />
+        <input {...lastNameProps} />
       </label>
       <p>
         <b>
