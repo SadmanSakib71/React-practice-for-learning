@@ -1,13 +1,10 @@
-import { useState } from "react";
 import "./App.css";
-import MyComponent from "./component/MyComponent";
+import StatusBar from "./component/StatusBar";
 
 const App = () => {
-  const [isPlaying, setIsPlaying] = useState(false);
-
   return (
     <>
-      <MyComponent />
+      <StatusBar />
     </>
   );
 };
