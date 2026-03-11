@@ -1,4 +1,5 @@
 import "./App.css";
+import Form from "./component/Form";
 import SaveButton from "./component/SaveButton";
 import StatusBar from "./component/StatusBar";
 
@@ -7,6 +8,8 @@ const App = () => {
     <>
       <StatusBar />
       <SaveButton />
+      <br />
+      <Form />
     </>
   );
 };
